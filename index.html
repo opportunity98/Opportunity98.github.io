@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudentOS Bharat — Download & Prebook | India's AI Education Platform</title>
+<meta name="description" content="Download StudentOS Bharat for Android, iOS, Windows, macOS, Linux. Prebook for ₹10 and get your first year FREE. AI-powered scholarships, career guidance, and smart calendar for Indian students.">
+<meta property="og:title" content="StudentOS Bharat — Download & Prebook">
+<meta property="og:description" content="India's AI-Powered Education Platform. Prebook for ₹10, first year FREE.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:url" content="https://studentos.in">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1e1b4b; color: white; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; font-family: inherit; }
+img { max-width: 100%; height: auto; }
+
+/* Navbar */
+.navbar { position: sticky; top: 0; z-index: 40; background: rgba(30, 27, 75, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.navbar-inner { max-width: 1280px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 1.25rem; color: white; }
+.logo-badge { width: 32px; height: 32px; background: #f59e0b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #1e1b4b; font-size: 0.75rem; font-weight: bold; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-link { display: flex; align-items: center; gap: 6px; color: #c7d2fe; font-size: 0.875rem; transition: color 0.2s; }
+.nav-link:hover { color: white; }
+.nav-login { padding: 8px 16px; background: rgba(255,255,255,0.1); border-radius: 9999px; color: white; font-size: 0.875rem; transition: background 0.2s; }
+.nav-login:hover { background: rgba(255,255,255,0.2); }
+.mobile-menu-btn { display: none; background: none; color: white; font-size: 1.5rem; }
+.mobile-menu { display: none; background: #312e81; border-top: 1px solid rgba(255,255,255,0.1); padding: 16px; }
+.mobile-menu a { display: block; color: #c7d2fe; padding: 8px 0; }
+
+/* Hero */
+.hero { position: relative; padding: 80px 16px; text-align: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, #1e1b4b, #312e81, #1e1b4b); }
+.hero-content { position: relative; max-width: 896px; margin: 0 auto; }
+.hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 24px; }
+.hero-subtitle { font-size: 1.25rem; color: #c7d2fe; margin-bottom: 12px; }
+.hero-tagline { font-size: 1.125rem; color: #a5b4fc; margin-bottom: 32px; }
+.trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 40px; }
+.badge { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(255,255,255,0.1); border-radius: 9999px; color: #c7d2fe; font-size: 0.875rem; backdrop-filter: blur(4px); }
+.staleness { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: #f0fdf4; color: #15803d; font-size: 0.75rem; font-weight: 500; border-radius: 9999px; border: 1px solid #bbf7d0; }
+
+/* Download Section */
+.section { padding: 64px 16px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-title { font-size: 1.875rem; font-weight: 700; text-align: center; margin-bottom: 16px; }
+.section-subtitle { color: #a5b4fc; text-align: center; margin-bottom: 48px; max-width: 672px; margin-left: auto; margin-right: auto; }
+.platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+.platform-card { display: flex; flex-direction: column; align-items: center; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(12px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); transition: all 0.3s; }
+.platform-card:hover { transform: scale(1.05); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); background: rgba(255,255,255,0.15); }
+.platform-icon { padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.1); margin-bottom: 16px; }
+.platform-icon svg { width: 40px; height: 40px; color: white; }
+.platform-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+.platform-subtitle { font-size: 0.875rem; color: #c7d2fe; text-align: center; margin-bottom: 16px; }
+.platform-meta { display: flex; gap: 8px; margin-bottom: 16px; font-size: 0.75rem; color: #a5b4fc; }
+.platform-meta span { padding: 4px 8px; background: rgba(255,255,255,0.1); border-radius: 9999px; }
+.platform-min { font-size: 0.75rem; color: #a5b4fc; margin-bottom: 16px; }
+.platform-btn { width: 100%; padding: 12px 24px; border-radius: 9999px; font-weight: 600; color: white; text-align: center; transition: all 0.2s; display: inline-block; }
+.platform-btn:hover { transform: scale(1.05); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.bg-green { background: #16a34a; }
+.bg-green:hover { background: #15803d; }
+.bg-blue { background: #2563eb; }
+.bg-blue:hover { background: #1d4ed8; }
+.bg-sky { background: #3b82f6; }
+.bg-sky:hover { background: #2563eb; }
+.bg-gray { background: #1f2937; }
+.bg-gray:hover { background: #111827; }
+.bg-orange { background: #ea580c; }
+.bg-orange:hover { background: #c2410c; }
+
+/* Prebook Section */
+.prebook-section { padding: 64px 16px; }
+.prebook-card { background: #f59e0b; border-radius: 24px; padding: 32px; max-width: 896px; margin: 0 auto; }
+.prebook-card h2 { font-size: 1.875rem; font-weight: 700; color: #1e1b4b; margin-bottom: 8px; }
+.prebook-card p { color: #1e3a5f; margin-bottom: 32px; }
+.prebook-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.prebook-features { list-style: none; }
+.prebook-features li { display: flex; align-items: center; gap: 8px; color: #1e1b4b; margin-bottom: 12px; }
+.prebook-features li::before { content: "✓"; font-weight: bold; color: #1e1b4b; }
+.prebook-price { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.prebook-price .price { font-size: 3rem; font-weight: 700; color: #1e1b4b; }
+.prebook-price .period { color: #1e3a5f; margin-bottom: 8px; }
+.prebook-price .strike { text-decoration: line-through; color: #1e3a5f; font-size: 0.875rem; margin-bottom: 16px; }
+.prebook-price .save { font-size: 0.875rem; font-weight: 600; color: #1e1b4b; margin-bottom: 24px; }
+.prebook-btn { padding: 16px 48px; background: #1e1b4b; color: white; border-radius: 9999px; font-size: 1.25rem; font-weight: 700; transition: all 0.2s; }
+.prebook-btn:hover { background: #312e81; transform: scale(1.05); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); }
+
+/* How It Works */
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 896px; margin: 0 auto; }
+.step-card { text-align: center; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+.step-number { width: 48px; height: 48px; background: #f59e0b; color: #1e1b4b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; margin: 0 auto 16px; }
+.step-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+.step-card p { color: #a5b4fc; }
+
+/* Disclaimer */
+.disclaimer { max-width: 768px; margin: 0 auto; text-align: center; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+.disclaimer p { color: #a5b4fc; margin-bottom: 16px; }
+.disclaimer a { color: #f59e0b; display: inline-flex; align-items: center; gap: 8px; }
+.disclaimer a:hover { color: #fbbf24; }
+
+/* Pricing */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1152px; margin: 0 auto; }
+.pricing-card { position: relative; display: flex; flex-direction: column; padding: 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); transition: all 0.3s; }
+.pricing-card:hover { transform: scale(1.05); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+.pricing-card.highlighted { background: #f59e0b; color: #1e1b4b; border-color: #fbbf24; }
+.pricing-card.highlighted .pricing-desc { color: #1e3a5f; }
+.pricing-card.highlighted .pricing-period { color: #1e3a5f; }
+.pricing-card.highlighted .pricing-features li { color: #1e1b4b; }
+.pricing-card.highlighted .pricing-features li::before { color: #1e1b4b; }
+.pricing-card.highlighted .pricing-unavailable { color: #1e3a5f; opacity: 0.5; }
+.pricing-card.highlighted .pricing-unavailable::before { color: #dc2626; }
+.pricing-badge { position: absolute; top: 0; right: 0; background: #dc2626; color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-bottom-left-radius: 8px; }
+.pricing-best { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #1e1b4b; color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px; display: flex; align-items: center; gap: 4px; }
+.pricing-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+.pricing-desc { font-size: 0.875rem; color: #c7d2fe; margin-bottom: 16px; }
+.pricing-price { font-size: 2.5rem; font-weight: 700; margin-bottom: 4px; }
+.pricing-period { font-size: 0.875rem; color: #a5b4fc; margin-bottom: 24px; }
+.pricing-features { list-style: none; margin-bottom: 32px; flex: 1; }
+.pricing-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.875rem; margin-bottom: 12px; color: #c7d2fe; }
+.pricing-features li::before { content: "✓"; color: #4ade80; flex-shrink: 0; }
+.pricing-unavailable::before { content: "✗"; color: #f87171; }
+.pricing-cta { width: 100%; padding: 12px 24px; border-radius: 9999px; font-weight: 600; text-align: center; transition: all 0.2s; display: inline-block; }
+.pricing-cta:hover { transform: scale(1.05); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.pricing-card.highlighted .pricing-cta { background: #1e1b4b; color: white; }
+.pricing-card.highlighted .pricing-cta:hover { background: #312e81; }
+.pricing-card:not(.highlighted) .pricing-cta { background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.4); }
+.pricing-card:not(.highlighted) .pricing-cta:hover { background: rgba(255,255,255,0.3); }
+
+/* Gov/CSR Note */
+.gov-note { text-align: center; padding: 48px 16px; }
+.gov-note p { color: #a5b4fc; max-width: 672px; margin: 0 auto; }
+.gov-note strong { color: white; }
+.gov-note .highlight { color: #f59e0b; }
+
+/* Footer */
+.footer { background: #1e1b4b; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-inner { max-width: 1280px; margin: 0 auto; padding: 48px 16px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+.footer-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.125rem; color: white; margin-bottom: 16px; }
+.footer-brand .logo-badge { width: 32px; height: 32px; background: #f59e0b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #1e1b4b; font-size: 0.75rem; }
+.footer-desc { color: #a5b4fc; font-size: 0.875rem; }
+.footer-title { color: white; font-weight: 600; margin-bottom: 16px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 8px; }
+.footer-links a { color: #a5b4fc; font-size: 0.875rem; transition: color 0.2s; }
+.footer-links a:hover { color: white; }
+.footer-social { display: flex; gap: 16px; margin-bottom: 16px; }
+.footer-social a { color: #a5b4fc; transition: color 0.2s; }
+.footer-social a:hover { color: white; }
+.footer-social svg { width: 20px; height: 20px; }
+.footer-bottom { margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 16px; }
+.footer-bottom p { color: #a5b4fc; font-size: 0.875rem; }
+.footer-lang { display: flex; align-items: center; gap: 8px; }
+.footer-lang span { color: #a5b4fc; font-size: 0.875rem; }
+.footer-lang select { background: #312e81; color: white; font-size: 0.875rem; padding: 4px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; padding: 16px; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+.modal-overlay.active { display: flex; }
+.modal { position: relative; width: 100%; max-width: 512px; max-height: 90vh; overflow-y: auto; border-radius: 16px; background: white; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+.modal-close { position: absolute; top: 16px; right: 16px; padding: 8px; border-radius: 50%; color: #9ca3af; background: none; font-size: 1.25rem; transition: all 0.2s; }
+.modal-close:hover { color: #4b5563; background: #f3f4f6; }
+.modal-body { padding: 32px; }
+.modal-title { font-size: 1.5rem; font-weight: 700; color: #1e1b4b; margin-bottom: 8px; }
+.modal-subtitle { color: #6b7280; margin-bottom: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-label { display: block; font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 4px; }
+.form-label .required { color: #ef4444; }
+.form-input { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #d1d5db; outline: none; transition: all 0.2s; font-size: 1rem; }
+.form-input:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+.form-input.error { border-color: #ef4444; }
+.form-error { color: #ef4444; font-size: 0.875rem; margin-top: 4px; }
+.form-checkbox { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; cursor: pointer; }
+.form-checkbox input { margin-top: 4px; width: 16px; height: 16px; accent-color: #4f46e5; }
+.form-checkbox span { font-size: 0.875rem; color: #6b7280; }
+.form-checkbox a { color: #4f46e5; text-decoration: underline; }
+.form-submit { width: 100%; padding: 16px 24px; border-radius: 9999px; background: #4f46e5; color: white; font-size: 1.125rem; font-weight: 700; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.form-submit:hover { background: #4338ca; transform: scale(1.05); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.alert-error { display: flex; align-items: center; gap: 8px; padding: 12px; border-radius: 8px; background: #fef2f2; color: #b91c1c; font-size: 0.875rem; margin-bottom: 16px; }
+.success-icon { width: 64px; height: 64px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 2rem; }
+.success-title { font-size: 1.5rem; font-weight: 700; color: #1e1b4b; margin-bottom: 8px; text-align: center; }
+.success-text { color: #6b7280; text-align: center; margin-bottom: 8px; }
+.token-display { text-align: center; color: #9ca3af; font-size: 0.875rem; margin-bottom: 24px; }
+.token-display code { background: #f3f4f6; padding: 4px 8px; border-radius: 4px; font-family: monospace; }
+.download-links { display: grid; gap: 12px; margin-bottom: 24px; }
+.download-link { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; background: #eef2ff; color: #4338ca; transition: background 0.2s; }
+.download-link:hover { background: #e0e7ff; }
+.download-link svg { width: 20px; height: 20px; }
+.spinner { width: 20px; height: 20px; border: 2px solid #ffffff; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-center { text-align: center; padding: 32px; }
+.loading-center .spinner { width: 48px; height: 48px; border-color: #4f46e5; border-top-color: transparent; margin: 0 auto 16px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: block; }
+  .mobile-menu.active { display: block; }
+  .hero h1 { font-size: 2rem; }
+  .prebook-grid { grid-template-columns: 1fr; }
+  .platform-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="logo">
+      <span class="logo-badge">SOB</span>
+      StudentOS Bharat
+    </a>
+    <div class="nav-links">
+      <a href="#download" class="nav-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+      <a href="#prebook" class="nav-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Prebook
+      </a>
+      <a href="#pricing" class="nav-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Pricing
+      </a>
+      <a href="#" class="nav-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        AI Transparency
+      </a>
+      <a href="#" class="nav-login">Login</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#download">Download</a>
+    <a href="#prebook">Prebook</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#">AI Transparency</a>
+    <a href="#" style="color:white;font-weight:600;">Login</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>StudentOS Bharat</h1>
+    <p class="hero-subtitle">India's AI-Powered Education Platform</p>
+    <p class="hero-tagline">Affordable access for every student. Built for India. Hosted in India.</p>
+
+    <div class="trust-badges">
+      <span class="badge">🇮🇳 Made in India</span>
+      <span class="badge">🔒 DPDP Compliant</span>
+      <span class="badge">♿ WCAG 2.1 AA</span>
+      <span class="badge">🤖 AI-Powered</span>
+    </div>
+
+    <span class="staleness">🔄 Data current as of 19 Jun 2026</span>
+  </div>
+</section>
+
+<!-- Download Section -->
+<section class="section" id="download">
+  <div class="section-inner">
+    <h2 class="section-title">Download StudentOS Bharat</h2>
+    <p class="section-subtitle">Available on all major platforms. Choose your device and get started.</p>
+
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="platform-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 class="platform-title">Android</h3>
+        <p class="platform-subtitle">APK for all Android phones & tablets</p>
+        <div class="platform-meta">
+          <span>v1.0.0</span>
+          <span>25 MB</span>
+        </div>
+        <p class="platform-min">Min: Android 8.0+</p>
+        <a href="#" class="platform-btn bg-green">Download APK</a>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="platform-title">iPhone & iPad</h3>
+        <p class="platform-subtitle">Install from App Store</p>
+        <div class="platform-meta">
+          <span>v1.0.0</span>
+          <span>35 MB</span>
+        </div>
+        <p class="platform-min">Min: iOS 15+</p>
+        <a href="#" class="platform-btn bg-blue">App Store</a>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="platform-title">Windows</h3>
+        <p class="platform-subtitle">Installer for Windows 10/11</p>
+        <div class="platform-meta">
+          <span>v1.0.0</span>
+          <span>45 MB</span>
+        </div>
+        <p class="platform-min">Min: Windows 10+</p>
+        <a href="#" class="platform-btn bg-sky">Download for Windows</a>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.5 3.5M4 16l-1.5 3.5M12 11v.01"/><path d="M12 3v4"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+        </div>
+        <h3 class="platform-title">macOS</h3>
+        <p class="platform-subtitle">Universal app for Intel & Apple Silicon</p>
+        <div class="platform-meta">
+          <span>v1.0.0</span>
+          <span>42 MB</span>
+        </div>
+        <p class="platform-min">Min: macOS 12+</p>
+        <a href="#" class="platform-btn bg-gray">Download for Mac</a>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <h3 class="platform-title">Linux</h3>
+        <p class="platform-subtitle">.deb & .AppImage packages</p>
+        <div class="platform-meta">
+          <span>v1.0.0</span>
+          <span>40 MB</span>
+        </div>
+        <p class="platform-min">Min: Ubuntu 20.04+</p>
+        <a href="#" class="platform-btn bg-orange">Download for Linux</a>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:#a5b4fc;font-size:0.875rem;margin-top:32px;">All downloads are free. Subscription required to use the app.</p>
+  </div>
+</section>
+
+<!-- Prebook Section -->
+<section class="prebook-section" id="prebook">
+  <div class="prebook-card">
+    <h2>🔒 Prebook for ₹10 — First Year FREE</h2>
+    <p>Pay ₹10 once. Get full access FREE for 12 months. Renew at ₹25/year after.</p>
+
+    <div class="prebook-grid">
+      <ul class="prebook-features">
+        <li>AI Scholarship Matcher</li>
+        <li>Career Guidance Engine</li>
+        <li>18-Layer Smart Calendar</li>
+        <li>Offline Sync</li>
+        <li>Advanced Analytics</li>
+        <li>Priority Support</li>
+      </ul>
+      <div class="prebook-price">
+        <div class="price">₹10</div>
+        <p class="period">one-time</p>
+        <p class="strike">₹25/year</p>
+        <p class="save">Save 60% with Prebook</p>
+        <button class="prebook-btn" onclick="openModal()">Prebook Now — ₹10</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Prebook ₹10</h3>
+        <p>Enter your email and pay via UPI/Card/NetBanking</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Download App</h3>
+        <p>Get download link via email instantly</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>First Year FREE</h3>
+        <p>Login with same email. All features unlocked for 12 months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Disclaimer -->
+<section class="section">
+  <div class="disclaimer">
+    <p>StudentOS Bharat requires an active subscription to ensure sustainable, high-quality service. Government and CSR sponsorships are available for schools that cannot afford individual subscriptions.</p>
+    <a href="#">Learn about School Bulk Plans →</a>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section" id="pricing">
+  <div class="section-inner">
+    <h2 class="section-title">Choose Your Plan</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card highlighted">
+        <div class="pricing-best">⭐ BEST VALUE</div>
+        <h3 class="pricing-name">Prebook</h3>
+        <p class="pricing-desc">One-time payment, first year FREE</p>
+        <div class="pricing-price">₹10</div>
+        <p class="pricing-period">one-time</p>
+        <ul class="pricing-features">
+          <li>First year ALL features FREE</li>
+          <li>AI Recommendations</li>
+          <li>Advanced Analytics</li>
+          <li>Offline Sync</li>
+          <li>Priority Support</li>
+          <li>After year 1: ₹25/year</li>
+        </ul>
+        <a href="#" class="pricing-cta">Prebook Now</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-name">Standard</h3>
+        <p class="pricing-desc">Pay as you go</p>
+        <div class="pricing-price">₹25</div>
+        <p class="pricing-period">per 12 months</p>
+        <ul class="pricing-features">
+          <li>All AI Features</li>
+          <li>Advanced Analytics</li>
+          <li>Offline Sync</li>
+          <li>Premium Reports</li>
+          <li class="pricing-unavailable">Priority Support</li>
+        </ul>
+        <a href="#" class="pricing-cta">Download & Subscribe</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-name">School Bulk</h3>
+        <p class="pricing-desc">For schools</p>
+        <div class="pricing-price">₹5</div>
+        <p class="pricing-period">per student / year</p>
+        <ul class="pricing-features">
+          <li>Core Features</li>
+          <li>Offline Sync</li>
+          <li>Basic Calendar</li>
+          <li class="pricing-unavailable">AI Recommendations</li>
+          <li class="pricing-unavailable">Advanced Analytics</li>
+        </ul>
+        <a href="#" class="pricing-cta">Contact for Schools</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-name">Gov/CSR</h3>
+        <p class="pricing-desc">Sponsored students</p>
+        <div class="pricing-price">₹0</div>
+        <p class="pricing-period">for students</p>
+        <ul class="pricing-features">
+          <li>All features included</li>
+          <li>Fully sponsored</li>
+        </ul>
+        <a href="#" class="pricing-cta">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gov/CSR Note -->
+<section class="gov-note">
+  <p><strong>Government & CSR Sponsorship:</strong> State governments and corporations can sponsor entire schools or districts. Students in sponsored schools pay <span class="highlight">₹0</span>. Contact us for bulk sponsorship programs.</p>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-badge">SOB</span>
+          StudentOS Bharat
+        </div>
+        <p class="footer-desc">India's AI-Powered Education Platform. Built for India. Hosted in India.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Product</h4>
+        <ul class="footer-links">
+          <li><a href="#download">Download</a></li>
+          <li><a href="#prebook">Prebook</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">AI Transparency</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">AI Transparency</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Connect</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.2-6.085 8.2-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+        <ul class="footer-links">
+          <li><a href="mailto:support@studentos.in">Contact Support</a></li>
+          <li><a href="#">System Status</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 StudentOS Bharat Technologies. All rights reserved.</p>
+      <div class="footer-lang">
+        <span>Language:</span>
+        <select>
+          <option>English</option>
+          <option>हिन्दी</option>
+          <option>বাংলা</option>
+          <option>తెలుగు</option>
+          <option>मराठी</option>
+          <option>தமிழ்</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Prebook Modal -->
+<div class="modal-overlay" id="prebookModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body" id="modalBody">
+      <!-- Step 1: Form -->
+      <div id="stepForm">
+        <h2 class="modal-title">Prebook StudentOS Bharat</h2>
+        <p class="modal-subtitle">Pay ₹10 once. Get your first year completely FREE.</p>
+
+        <form id="prebookForm" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label">Full Name <span class="required">*</span></label>
+            <input type="text" class="form-input" id="fullName" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email <span class="required">*</span></label>
+            <input type="email" class="form-input" id="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone Number <span class="required">*</span></label>
+            <input type="tel" class="form-input" id="phone" placeholder="9876543210" maxlength="10" required oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+          </div>
+
+          <label class="form-checkbox">
+            <input type="checkbox" id="agreeTerms" required>
+            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> <span class="required">*</span></span>
+          </label>
+
+          <label class="form-checkbox">
+            <input type="checkbox" id="agreeEmail" required>
+            <span>I consent to receive the download link via email <span class="required">*</span></span>
+          </label>
+
+          <div id="formError" style="display:none;" class="alert-error"></div>
+
+          <button type="submit" class="form-submit" id="submitBtn">
+            Continue to Payment — ₹10
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 2: Loading -->
+      <div id="stepLoading" style="display:none;">
+        <div class="loading-center">
+          <div class="spinner"></div>
+          <h3 style="font-size:1.25rem;font-weight:700;color:#1e1b4b;margin-bottom:8px;">Opening Razorpay Checkout...</h3>
+          <p style="color:#6b7280;">Please complete your payment in the secure window.</p>
+        </div>
+      </div>
+
+      <!-- Step 3: Success -->
+      <div id="stepSuccess" style="display:none;">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">🎉 Prebook Successful!</h2>
+        <p class="success-text">Your first year is FREE. Check your email for download links.</p>
+        <p class="token-display">Token: <code>****-****-ABCD</code></p>
+
+        <div class="download-links">
+          <a href="#" class="download-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Download for Android
+          </a>
+          <a href="#" class="download-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+            Download for iOS
+          </a>
+          <a href="#" class="download-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Download for Windows
+          </a>
+          <a href="#" class="download-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.5 3.5M4 16l-1.5 3.5M12 11v.01"/><path d="M12 3v4"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+            Download for macOS
+          </a>
+          <a href="#" class="download-link">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            Download for Linux
+          </a>
+        </div>
+
+        <p style="text-align:center;font-size:0.75rem;color:#9ca3af;margin-bottom:16px;">⏰ Token valid for 24 hours. Single use per platform.</p>
+
+        <button style="display:flex;align-items:center;gap:8px;margin:0 auto;color:#4f46e5;font-size:0.875rem;background:none;" onclick="alert('Email resent!')">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Resend download email
+        </button>
+      </div>
+
+      <!-- Step 4: Error -->
+      <div id="stepError" style="display:none;">
+        <div style="text-align:center;padding:32px;">
+          <div style="width:64px;height:64px;background:#fef2f2;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2rem;">⚠</div>
+          <h3 style="font-size:1.25rem;font-weight:700;color:#b91c1c;margin-bottom:8px;">Payment Failed</h3>
+          <p style="color:#6b7280;margin-bottom:24px;" id="errorMessage">Something went wrong.</p>
+          <button class="form-submit" onclick="resetForm()">Try Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Mobile menu toggle
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('active');
+}
+
+// Modal functions
+function openModal() {
+  document.getElementById('prebookModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('prebookModal').classList.remove('active');
+  document.body.style.overflow = '';
+  resetForm();
+}
+
+// Close modal on overlay click
+document.getElementById('prebookModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+// Show step helper
+function showStep(step) {
+  document.getElementById('stepForm').style.display = 'none';
+  document.getElementById('stepLoading').style.display = 'none';
+  document.getElementById('stepSuccess').style.display = 'none';
+  document.getElementById('stepError').style.display = 'none';
+  document.getElementById('step' + step).style.display = 'block';
+}
+
+// Form validation
+function validateForm() {
+  const fullName = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const agreeTerms = document.getElementById('agreeTerms').checked;
+  const agreeEmail = document.getElementById('agreeEmail').checked;
+
+  const errorDiv = document.getElementById('formError');
+  let errors = [];
+
+  if (fullName.length < 2) errors.push('Name must be at least 2 characters');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Please enter a valid email');
+  if (!/^[6-9]\d{9}$/.test(phone)) errors.push('Please enter a valid 10-digit Indian mobile number');
+  if (!agreeTerms) errors.push('You must agree to Terms and Privacy Policy');
+  if (!agreeEmail) errors.push('You must consent to receive emails');
+
+  if (errors.length > 0) {
+    errorDiv.style.display = 'flex';
+    errorDiv.innerHTML = '⚠ ' + errors.join('. ');
+    return false;
+  }
+
+  errorDiv.style.display = 'none';
+  return true;
+}
+
+// Handle form submit
+function handleSubmit(e) {
+  e.preventDefault();
+
+  if (!validateForm()) return false;
+
+  showStep('Loading');
+
+  // Simulate Razorpay integration (replace with real API call)
+  setTimeout(() => {
+    // In production, this would call your backend to create Razorpay order
+    // Then open Razorpay checkout
+    // On success, showStep('Success')
+    // On failure, showStep('Error')
+
+    // For demo, show success after 2 seconds
+    showStep('Success');
+  }, 2000);
+
+  return false;
+}
+
+function resetForm() {
+  document.getElementById('prebookForm').reset();
+  showStep('Form');
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// Scroll animation observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.platform-card, .step-card, .pricing-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
